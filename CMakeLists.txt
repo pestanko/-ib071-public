@@ -4,9 +4,6 @@ cmake_minimum_required(VERSION 3.6)
 project(pb071-public)
 
 
-# Executable
-add_executable(${EXECUTABLE} ${SOURCES})
-
 # Configure compiler warnings
 if (CMAKE_C_COMPILER_ID MATCHES Clang OR ${CMAKE_C_COMPILER_ID} STREQUAL GNU)
   # using regular Clang, AppleClang or GCC

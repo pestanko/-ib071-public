@@ -53,7 +53,7 @@ Manual: <https://www.fi.muni.cz/pb071/man/#cmake> (Urcite sa na to pozrite!)
 
 ```bash
 # Spusti cmake a "pomocne subory" pre zostavenie suboru vloz do priecinku `build`
-cmake -Bbuild 
+cmake -S . -Bbuild 
 
 # zmen aktualny adresar na build
 cd build 
