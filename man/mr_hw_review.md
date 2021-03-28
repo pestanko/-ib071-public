@@ -12,8 +12,8 @@ It is up to you how you will create a Merge request with the submission.
 
 ## Preconditions
 
-- add me and Tomas as `Reviewer` (or `Developer` if you want US to create MR in your behaf) to your repository (pb071 project).
-- create labels: `not-reviewed`, `reviewed`, `change-required` (a.k.a opravit)
+- add me and Tomas as `Reviewer` (or `Developer` if you want US to create MR on your behaf) to your repository (`pb071` project).
+- create labels: `not-reviewed`, `reviewed`, `change-required` (a.k.a _opravit_)
 
 
 ## Merge Request Format
@@ -21,12 +21,12 @@ It is up to you how you will create a Merge request with the submission.
 - `MR Title`: HW0X Review
 - `Assignee`: Peter Stanko or Tomas Kancko
 - `Reviewer`: Peter Stanko or Tomas Kancko
-- `Labels`: `not-reviewed` (you would need to create)
+- `Labels`: `not-reviewed` (you need to create this)
 
 
 ## Possible approach to create MR
 
-This are the steps we will be doing in order to create a Merge request
+These are the steps we will be doing in order to create a Merge request:
 
 ### Create the base branch for reviews
 
@@ -36,7 +36,7 @@ This are the steps we will be doing in order to create a Merge request
 git switch -c hw-reviews
 ```
 
-- [Reset](https://git-scm.com/docs/git-reset) this branch to some suitable commit - 
+- [Reset](https://git-scm.com/docs/git-reset) this branch to a suitable commit - 
 the one before implementing the homework or just the initial commit (better option would be the commit with the `.gitignore` file)
 
 ```shell
@@ -58,7 +58,7 @@ git switch master
 
 ### Create the branch with implementation of hwXX
 
-- Make sure you are on the `master`
+- Make sure you are on the `master` branch
 
 ```shell
 git switch master
@@ -71,7 +71,7 @@ git switch -c hwXX-review
 git switch -c hw02-review
 ```
 
-- Now reset **mixed** the branch commits history to the `hw-reviews`:
+- Now reset the branch's commit history to the `hw-reviews`:
 
 ```shell
 git reset --mixed hw-reviews
@@ -92,14 +92,14 @@ git commit -m "Implementation of hw02"
 git push -u origin hw02-review
 ```
 
-After you are done - create a new MR in the UI.
+After you are done, create a new MR in the UI.
 
 - **Source branch:** `hwXX-review`
 - **Target branch:** `hw-reviews`
 
-After that you, will fill in the `title` of the MR, set the `Assignee`, `Reviewer` and the `labels`.
+After that you will fill in the `title` of the MR, set the `Assignee`, `Reviewer` and the `labels`.
 
-In order to check whether the MR is created correctly in the `Changes` tab you should see your `hwXX` implementation only.
+To check whether the MR is created correctly, you should see only your `hwXX` implementation in the `Changes` tab.
 
 
 ## Better approach to create a MR
