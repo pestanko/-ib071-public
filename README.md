@@ -3,7 +3,7 @@
 This repository serves as a storage for my public handouts for the PB071.
 
 
-## Tutorials
+## Sections
 
-- [Tutorial02](./cv02)
-
+- [Demos](./demo)
+- [Manual](./man)
