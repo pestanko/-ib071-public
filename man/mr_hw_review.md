@@ -36,6 +36,13 @@ These are the steps we will be doing in order to create a Merge request:
 git switch -c hw-reviews
 ```
 
+If the `git switch` is not working, you can use the `git checkout`.
+
+```shell
+git checkout -b hw-reviews
+```
+
+
 - [Reset](https://git-scm.com/docs/git-reset) this branch to a suitable commit - 
 the one before implementing the homework or just the initial commit (better option would be the commit with the `.gitignore` file)
 
@@ -56,6 +63,12 @@ git shell -u origin hw-reviews
 git switch master
 ```
 
+or with `git checkout`
+
+```shell
+git checkout master
+```
+
 ### Create the branch with implementation of hwXX
 
 - Make sure you are on the `master` branch
@@ -64,11 +77,19 @@ git switch master
 git switch master
 ```
 
+or with `git checkout`
+
+```shell
+git checkout master
+```
+
 - Create a new branch with `hwXX` submission (where `hwXX` is the specific homework, example: `hw02`)
 ```shell
 git switch -c hwXX-review
 # Example:
 git switch -c hw02-review
+# or git checkout if switch is not working
+git checkout -b hw02-review
 ```
 
 - Now reset the branch's commit history to the `hw-reviews`:
@@ -105,10 +126,11 @@ To check whether the MR is created correctly, you should see only your `hwXX` im
 ## Better approach to create a MR
 
 For each homework implementation you would create a separate branch, where you would develop the whole homework.
-You would be only merging your changes to the `master` branch before submitting to kontr.
+You would be merging your changes to the `master` branch from the "hw developent branch" before submitting to kontr.
 
-You would also need a separate branch for reviews - based on original master (before implementing and merging the `hwXX`).
-After you are done with the implementation, you would create a MR with `hwXX` implementation against this branch with all your changes.
+You would also need a new separate branch for reviews - based on original master (before implementing and merging the `hwXX`), 
+where you would be creating merge requests after you are done implementing your `hwXX`. This branch would be "mirroring" the master branch.
 
-This approach is better but also it is "harder", since you would need to develop the whole HW in separate branch and branch management might become messy.
+This approach is better, since it would teach you more, but it is more "advanced", since you are using multiple branches for the
+whole time you are developint your homeworks.
 
