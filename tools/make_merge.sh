@@ -8,11 +8,12 @@ GIT_HOST="gitlab.fi.muni.cz"
 REPO_URL="git@$GIT_HOST:$XLOGIN/${REPO}.git"
 
 BASE_BRANCH="hw-reviews"
-HW_BRANCH="hw${HW}-review"
+HW_BRANCH="${HW}-review"
 
-$REPO_DIR="${XLOGIN}_${REPO}"
+REPO_DIR="${XLOGIN}_${REPO}"
 
 if [ -e "$REPO_DIR" ]; then
+    echo "Removing repo dir ${REPO_DIR}"
     rm -rf "$REPO_DIR"
 fi
 
@@ -21,13 +22,8 @@ git clone "$REPO_URL" "$REPO_DIR"
 cd $REPO_DIR
 
 git switch -C "${HW_BRANCH}"
-git reset --mixed ${BASE_BRANCH}
-git add "hw${HW}"
-git commit -m "HW${HW} Implementation"
+git reset --mixed origin/${BASE_BRANCH}
+git add "${HW}"
+git commit -m "${HW} Implementation"
 git push -u origin "${HW_BRANCH}"
-
-
-
-
-
 
